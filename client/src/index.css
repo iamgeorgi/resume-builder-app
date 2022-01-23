@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.a4-size {
+  width: 940px;
+  height: 1369px;
+}
