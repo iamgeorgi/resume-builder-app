@@ -6,3 +6,15 @@
   width: 940px;
   height: 1369px;
 }
+
+@layer base {
+  h3 {
+    @apply text-xl font-bold;
+  }
+  h4 {
+    @apply text-lg font-semibold;
+  }
+  p {
+    @apply text-base
+  }
+}
