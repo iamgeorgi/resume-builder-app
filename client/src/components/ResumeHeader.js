@@ -4,14 +4,12 @@ import ContactInfo from './ContactInfo';
 
 const ResumeHeader = ({ info }) => {
     const { avatar, name, title, bio, contactInfo } = info;
-    console.log('avatar', avatar);
-    const avatarImage = "bg-[url('" + avatar + "')]";
    
     return (
         <>
             <div className='my-5 flex'>
                 <div className='w-1/3'>
-                    <div className={avatarImage}>
+                    <div className='bg-cover h-full w-full' style={{backgroundImage: `url("${avatar}"`}}>
                     </div>
                 </div>
                 <div className='w-2/3'>

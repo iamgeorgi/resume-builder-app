@@ -3,6 +3,9 @@ import WorkExpierence from './components/WorkExpierence';
 import RegularList from './components/RegularList';
 import Education from './components/Education';
 import ResumeHeader from './components/ResumeHeader';
+import { ResumeView } from './components/ResumeView';
+import axios from 'axios';
+// import { ResumeMain } from './components/ResumeMain';
 
 const workExpierence = [
   {
@@ -54,18 +57,14 @@ const headerInfo =
 
 
 function App() {
-
+  axios.get('http://localhost:3000/posts')
+  .then(function (response) {
+    console.log(response);
+  })
   return (
     <>
       <ResumeHeader info={headerInfo} />
-      <div className='flex flex-wrap'>
-        <div className="w-1/2 p-10">
-          <RegularList title="Work Expierence" data={workExpierence} itemName="workExpierenceInfo" itemComponent={WorkExpierence} />
-        </div>
-        <div className="w-1/2 p-10">
-          <RegularList title="Education" data={education} itemName="education" itemComponent={Education} />
-        </div>
-      </div>
+      {/* <ResumeMain info={} /> */}
     </>
   );
 }
