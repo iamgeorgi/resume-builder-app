@@ -1,15 +1,17 @@
 import React from 'react';
+import WorkExpierenceItem from './WorkExpierenceItem';
+import ListIterator from './ListIterator';
 
-const WorkExpierence = ({ workExpierenceInfo }) => {
-    const { subheader, description } = workExpierenceInfo;
+export const WorkExpierence = ({ info }) => {
+    const { workExpierence } = info;
     return (
         <>
-            <div className='my-5'>
-                <h4>{subheader}</h4>
-                <p>{description}</p>
-            </div>
+            <h2>Work Expierence</h2>
+            <ListIterator
+                data={workExpierence}
+                itemName="workExpierence"
+                itemComponent={WorkExpierenceItem}
+            />
         </>
     )
 }
-
-export default WorkExpierence;

@@ -1,16 +1,17 @@
 import React from 'react';
+import ListIterator from './ListIterator';
+import EducationItem from './EducationItem';
 
-const Education = ({ education }) => {
-    const { subheader, years, description } = education;
+export const Education = ({ info }) => {
+    const { education } = info;
     return (
         <>
-            <div className='my-5'>
-                <h4>{subheader}</h4>
-                <h5>{years}</h5>
-                <p>{description}</p>
-            </div>
+            <h2>Education</h2>
+            <ListIterator
+                data={education}
+                itemName="education"
+                itemComponent={EducationItem}
+            />
         </>
     )
 }
-
-export default Education;
