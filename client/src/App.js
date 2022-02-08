@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import WorkExpierence from './components/WorkExpierenceItem';
-import RegularList from './components/ListIterator';
-import Education from './components/EducationItem';
 import ResumeHeader from './components/ResumeHeader';
-import { ResumeView } from './components/ResumeView';
 import axios from 'axios';
 import { ResumeMain } from './components/ResumeMain';
+import { Education } from './components/Education';
+import { WorkExpierence } from './components/WorkExpierence';
+import { Languages } from './components/Languages';
+import { ResumeView } from './components/ResumeView';
 
 function App() {
   const [headerData, setHeaderData] = useState({});
@@ -13,23 +13,23 @@ function App() {
 
   useEffect(() => {
     axios.get('http://localhost:3000/headerInfo')
-    .then(function (response) {
-      getData(response.data, headerData, setHeaderData);
-    })
-    .then(() => console.log('headerData', headerData))
-    .catch(function (error) {
-      console.log(error);
-    })
+      .then(function (response) {
+        getData(response.data, headerData, setHeaderData);
+      })
+      .then(() => console.log('headerData', headerData))
+      .catch(function (error) {
+        console.log(error);
+      })
   }, []);
 
   useEffect(() => {
     axios.get('http://localhost:3000/sectionInfo')
-    .then(function (response) {
-      getData(response.data, infoSectionData, setInfoSectionData);
-    })
-    .then(() => console.log('infoSectionData', infoSectionData))
+      .then(function (response) {
+        getData(response.data, infoSectionData, setInfoSectionData);
+      })
+      .then(() => console.log('infoSectionData', infoSectionData))
   }, []);
-  
+
   const getData = (data, getter, setter) => {
     setter(data);
     return getter;
@@ -37,8 +37,14 @@ function App() {
 
   return (
     <>
-      <ResumeHeader info={headerData} />
-      <ResumeMain info={infoSectionData} />
+      <ResumeView>
+        <ResumeHeader info={headerData} />
+        <ResumeMain info={infoSectionData}>
+          <Education />
+          <WorkExpierence />
+          <Languages />
+        </ResumeMain>
+      </ResumeView>
     </>
   );
 }

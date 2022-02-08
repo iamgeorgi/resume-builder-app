@@ -36,23 +36,6 @@
         "years": "2005 - 2015",
         "description": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente aliquid minima, sint ratione sunt et at voluptate repudiandae ea sit sequi odit accusantium consequuntur. Est amet quisquam dolorum esse harum!"
       }
-    ],
-    "languages": [
-      {
-        "id": 1,
-        "subheader": "Dutch",
-        "level": "C1 level"
-      },
-      {
-        "id": 2,
-        "subheader": "French",
-        "level": "B1 Level"
-      },
-      {
-        "id": 3,
-        "subheader": "English",
-        "level": "B2 Level"
-      }
     ]
   },
   "headerInfo": {

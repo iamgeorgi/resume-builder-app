@@ -5,6 +5,7 @@ import ListIterator from './ListIterator';
 export const WorkExpierence = ({ info }) => {
     const { workExpierence } = info;
     return (
+        info && Object.keys(info).length !== 0 ?
         <>
             <h2>Work Expierence</h2>
             <ListIterator
@@ -13,5 +14,6 @@ export const WorkExpierence = ({ info }) => {
                 itemComponent={WorkExpierenceItem}
             />
         </>
+        : <div>Loading</div>
     )
 }
