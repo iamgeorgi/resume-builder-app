@@ -7,6 +7,10 @@
   height: 1369px;
 }
 
+.border-10 {
+  border-width: 10px;
+}
+
 @layer base {
   h2 {
     @apply text-2xl font-bold;

@@ -4,7 +4,8 @@ export const ResumeMain = ({ info, children }) => {
     return (
         <>
             {React.Children.map(children,
-                child => {
+                (child, index) => {
+                    console.log('index', index);
                     const matchComponentWithData = Object.entries(info)
                         .find(data => {
                             const dataName = data[0];
